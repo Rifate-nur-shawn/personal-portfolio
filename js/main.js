@@ -1,18 +1,17 @@
-// Wait for the DOM to be fully loaded
 document.addEventListener('DOMContentLoaded', function() {
     // Initialize particles.js
     if (document.getElementById('particles-js')) {
         particlesJS('particles-js', {
             particles: {
                 number: {
-                    value: 150,  // Increased number of particles
+                    value: 300,  // Increased number of particles for a denser effect
                     density: {
                         enable: true,
-                        value_area: 800
+                        value_area: 1500  // Adjusted to spread particles more evenly over the screen
                     }
                 },
                 color: {
-                    value: '#00ff00'  // Changed to bright green
+                    value: '#00ff00'  // Bright green color for particles
                 },
                 shape: {
                     type: 'circle',
@@ -22,63 +21,67 @@ document.addEventListener('DOMContentLoaded', function() {
                     }
                 },
                 opacity: {
-                    value: 0.6,
+                    value: 0.7,  // Increased opacity for clearer visibility
                     random: true,
                     anim: {
                         enable: true,
-                        speed: 1,
+                        speed: 1.5,  // Smooth animation for opacity changes
                         opacity_min: 0.1,
                         sync: false
                     }
                 },
                 size: {
-                    value: 3,
+                    value: 4,  // Slightly larger particles for a more visible effect
                     random: true,
                     anim: {
                         enable: true,
                         speed: 2,
-                        size_min: 0.1,
+                        size_min: 1,  // Ensure particles aren't too small
                         sync: false
                     }
                 },
                 line_linked: {
                     enable: true,
                     distance: 150,
-                    color: '#00ff00',  // Changed to bright green
+                    color: '#00ff00',  // Maintain the same bright green color for the lines
                     opacity: 0.5,
                     width: 1
                 },
                 move: {
                     enable: true,
-                    speed: 3,  // Faster movement
+                    speed: 4,  // Faster movement for a dynamic feel
                     direction: 'none',
                     random: true,
                     straight: false,
-                    out_mode: 'bounce',  // Changed to bounce
+                    out_mode: 'bounce',
                     bounce: true,
                     attract: {
-                        enable: true,  // Enable attraction
+                        enable: true,
                         rotateX: 600,
                         rotateY: 1200
                     }
                 }
             },
             interactivity: {
-                detect_on: 'window',  // Changed to window for better responsiveness
+                detect_on: 'window',  // Detect interactions based on window size
                 events: {
                     onhover: {
                         enable: true,
-                        mode: 'repulse'  // Changed to repulse for better mouse interaction
+                        mode: 'grab'  // Particles move towards the mouse (grab mode)
                     },
                     onclick: {
                         enable: true,
                         mode: 'push'
                     },
-                    resize: true
+                    resize: true,
+                    onmousemove: {
+                        enable: true,  // Enable mousemove event
+                        distance: 120  // Set a comfortable distance for particle movement with the mouse
+                    }
                 },
                 modes: {
                     grab: {
-                        distance: 200,
+                        distance: 120,  // The closer the mouse is, the stronger the attraction
                         line_linked: {
                             opacity: 1
                         }
@@ -90,8 +93,8 @@ document.addEventListener('DOMContentLoaded', function() {
                         opacity: 8,
                         speed: 3
                     },
-                    repulse: {
-                        distance: 100,  // Increased repulse distance
+                    attract: {
+                        distance: 120,  // Adjust distance for attraction to mouse cursor
                         duration: 0.4
                     },
                     push: {
@@ -105,7 +108,6 @@ document.addEventListener('DOMContentLoaded', function() {
             retina_detect: true
         });
     }
-    
 
     // The rest of your existing code...
     // Header scroll effect
