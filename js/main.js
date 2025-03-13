@@ -253,3 +253,13 @@ document.addEventListener('DOMContentLoaded', function() {
     // Run once on page load
     animateOnScroll();
 });
+
+// if (document.readyState === 'complete' || (document.readyState !== 'loading' && !document.documentElement.doScroll)) {
+//     // Run the function since the DOM is already ready
+//     console.log('The DOM is already ready');
+// } else {
+//     document.addEventListener('DOMContentLoaded', function() {
+//         // Run the function when the DOM content is loaded
+//         console.log('The DOM content has been loaded');
+//     });
+// }   // End of main.js
